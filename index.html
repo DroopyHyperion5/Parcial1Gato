@@ -10,14 +10,22 @@
 <body>
     <div id="tablero"></div>
     <div id="mensajes"></div>
+    <button onclick="reinicia()" type="button" class="btn btn-primary">Reiniciar</button>
     <script>
-        var turno = 0;
-        for (var i = 0; i < 25; i++) {
-            document.getElementById("tablero").innerHTML +=
-                '<button id="b' + i + '" onclick="MarcaLaCasilla(event)" type="button" class="btn btn-success btn-lg">🐱‍👤</button>';
 
-            if ((i + 1) % 5 === 0) {
-                document.getElementById("tablero").innerHTML += '<br>';
+
+        reinicia();
+        var turno = 0;
+        function reinicia() {
+            turno = 0;
+            document.getElementById("tablero").innerHTML ="";
+            for (var i = 0; i < 25; i++) {
+                document.getElementById("tablero").innerHTML +=
+                    '<button id="b' + i + '" onclick="MarcaLaCasilla(event)" type="button" class="btn btn-success btn-lg">🐱‍👤</button>';
+                if ((i + 1) % 5 === 0) {
+                    document.getElementById("tablero").innerHTML += '<br>';
+                }
+
             }
         }
 
